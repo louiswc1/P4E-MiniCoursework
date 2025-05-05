@@ -1,0 +1,45 @@
+// main.c Version 4.0
+
+#include "game.h"
+
+int main() {
+    Player player;
+
+    // call startGame function to initialize starting player data
+    startGame(&player);
+
+    // Call placeShipParts function to randomly place the ship parts
+    placeShipParts(&player);
+
+    // Call Asteroids function and check to initially place asteroid
+    Asteroids(&player, 1);
+
+    char move;
+
+    while (player.fuel > 0) { // loop continues until player runs out of fuel for test purposes (no win condition yet)
+
+        displayWorld(player);  // call function and display world
+
+        printf("Use WASD followed by Enter to move: ");
+        scanf(" %c", &move);  // space before %c skips any leftover newline characters
+
+        movePlayer(&player, move);  // call movePlayer function
+
+        Asteroids(&player, 0); // Implements asteroid movement function and collison with player check
+
+/*...................................................................................................................*/
+// WIN CONDITION
+        if (player.parts >= 10) {
+            printf("\nCongratulations! You collected all 10 ship parts.\n");
+            printf("You have repaired your ships communication systems and sent out an SOS call. Help is on the way. YOU WIN!\n");
+
+            manageHighscore(player.moves, 1);
+            break;
+        }}
+
+    if (player.fuel <= 0 && player.parts < 10){ // if fuel is 0 AND collected parts is less than 10, game over
+        printf("Game over, you ran out of fuel!\n");
+        manageHighscore(player.moves, 0);
+    }
+    return 0;
+}
