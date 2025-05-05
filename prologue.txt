@@ -1,0 +1,9 @@
+Welcome to Stranded in Space!
+
+You are an astronaut flying solo in space, returning home from your mission.
+
+Out of nowhere, you suddenly fly into an asteroid field! Your ship collided with multiple asteroids, and suffered severedamage, your communication systems are down, and one more asteroid impact will finish you off!
+Multiple pieces of your ship have been ripped off, and sent out into deep space!
+
+You are losing fuel fast, and your only hope is to salvage the missing parts and repair your ship to
+call for help before you run out of fuel and become stranded in space!
